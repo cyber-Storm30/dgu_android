@@ -8,7 +8,7 @@ import {
 import React, {useState} from 'react';
 import AccountImage from '../../../../../assets/account.png';
 
-const HospitalCard = ({data}) => {
+const HospitalCard = ({data, offer, offerValue}) => {
   const {width, height} = useWindowDimensions();
   const [isContacted, setIsContacted] = useState(false);
 
@@ -20,45 +20,116 @@ const HospitalCard = ({data}) => {
       style={{
         width: width - 40,
         backgroundColor: '#1CDAF2',
-        height: 120,
         borderRadius: 10,
         marginBottom: 10,
-        flexDirection: 'row',
-        alignItems: 'center',
         paddingLeft: 20,
+        paddingVertical: 20,
+        paddingHorizontal: 20,
       }}>
-      <View>
-        <Text style={{fontSize: 21, marginBottom: 3, color: 'black'}}>
-          Name:- {data?.name}
-        </Text>
-        <Text style={{fontSize: 14, marginBottom: 3, color: 'black'}}>
-          Address:- {data?.address}
-        </Text>
-        <Text style={{fontSize: 14, marginBottom: 3, color: 'black'}}>
-          Email:- {data?.email}
-        </Text>
-        <Text style={{fontSize: 14, marginBottom: 3, color: 'black'}}>
-          Contact Number:- {data?.mobile}
-        </Text>
-        {/* 
-        <TouchableOpacity
-          onPress={handleContactDoctor}
+      <Text
+        style={{
+          fontSize: 16,
+          marginBottom: 3,
+          color: 'black',
+          marginBottom: 10,
+          fontWeight: '500',
+        }}>
+        Name: {''}
+        <Text
           style={{
-            width: 100,
-            height: 30,
-            backgroundColor: '#06B1C7',
-            alignItems: 'center',
-            justifyContent: 'center',
-            borderRadius: 10,
-            marginTop: 2,
+            fontSize: 14,
+            marginBottom: 3,
+            color: 'black',
+            marginBottom: 10,
           }}>
-          {isContacted ? (
-            <Text style={{color: 'white'}}>Contacted</Text>
-          ) : (
-            <Text style={{color: 'white'}}>Contact</Text>
-          )}
-        </TouchableOpacity> */}
-      </View>
+          {data?.name}
+        </Text>
+      </Text>
+      {!offer && (
+        <Text
+          style={{
+            fontSize: 16,
+            marginBottom: 3,
+            color: 'black',
+            marginBottom: 10,
+            fontWeight: '500',
+          }}>
+          Phone: {''}
+          <Text
+            style={{
+              fontSize: 14,
+              marginBottom: 3,
+              color: 'black',
+              marginBottom: 10,
+            }}>
+            {data?.mobile}
+          </Text>
+        </Text>
+      )}
+      {!offer && (
+        <Text
+          style={{
+            fontSize: 16,
+            marginBottom: 3,
+            color: 'black',
+            marginBottom: 10,
+            fontWeight: '500',
+          }}>
+          Work hour: {''}
+          <Text
+            style={{
+              fontSize: 14,
+              marginBottom: 3,
+              color: 'black',
+              marginBottom: 10,
+            }}>
+            {data?.workHour}
+          </Text>
+        </Text>
+      )}
+      {!offer && (
+        <Text
+          style={{
+            fontSize: 16,
+            marginBottom: 3,
+            color: 'black',
+            marginBottom: 10,
+            fontWeight: '500',
+          }}>
+          Address: {''}
+          <Text
+            style={{
+              fontSize: 14,
+              marginBottom: 3,
+              color: 'black',
+              marginBottom: 10,
+            }}>
+            {data?.address}
+          </Text>
+        </Text>
+      )}
+      {offer && (
+        <Text
+          style={{
+            fontSize: 16,
+            marginBottom: 3,
+            color: 'black',
+            marginBottom: 10,
+            fontWeight: '500',
+          }}>
+          Discount: {''}
+          <Text
+            style={{
+              fontSize: 14,
+              marginBottom: 3,
+              color: 'black',
+              marginBottom: 10,
+            }}>
+            {(Math.floor(Math.random() * 3) + 1) * offerValue + '%'} discount
+            available on purchase of 499 and above
+          </Text>
+        </Text>
+      )}
     </TouchableOpacity>
   );
 };
