@@ -4,9 +4,11 @@ import {
   SafeAreaView,
   ScrollView,
   useWindowDimensions,
+  Image,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import HospitalCard from '../Hospitals/HospitalCard';
+import Offer1 from '../../../../assets/offer1.png';
 import axios from 'axios';
 import {baseURL} from '../../../Services/apiClient';
 // import MapView from 'react-native-maps';
@@ -30,14 +32,6 @@ const Offers = () => {
 
   return (
     <SafeAreaView style={{flex: 1}}>
-      {/* <MapView
-        initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-      /> */}
       <View
         style={{
           flex: 1,
@@ -53,6 +47,10 @@ const Offers = () => {
             color: 'black',
           }}>
           Offers and Discounts
+          <Image
+            source={Offer1}
+            style={{width: 30, height: 30, marginLeft: 4}}
+          />
         </Text>
         <ScrollView showsVerticalScrollIndicator={false}>
           {hospitals?.map((doctor, idx) => {

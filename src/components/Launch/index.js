@@ -38,7 +38,7 @@ const Launch = ({navigation}) => {
       <View style={{position: 'absolute', bottom: 20}}>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('Login');
+            navigation.navigate('Introduction');
           }}
           style={{
             width: width - 40,

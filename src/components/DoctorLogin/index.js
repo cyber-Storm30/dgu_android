@@ -6,12 +6,14 @@ import {
   TextInput,
   TouchableWithoutFeedback,
   ActivityIndicator,
+  Image,
 } from 'react-native';
 import React, {useState} from 'react';
 import axios from 'axios';
 import {baseURL} from '../../Services/apiClient';
 import {useDispatch} from 'react-redux';
 import {setDoctor, setUser} from '../../redux/auth';
+import DoctorIcon from '../../../assets/doctor1.jpeg';
 
 const DoctorLogin = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -51,6 +53,7 @@ const DoctorLogin = ({navigation}) => {
             textAlign: 'center',
           }}>
           Doctor Login
+          <Image source={DoctorIcon} style={{width: 35, height: 35}} />
         </Text>
       </View>
       <View style={{alignItems: 'center', flex: 1}}>

@@ -14,7 +14,7 @@ import axios from 'axios';
 import {baseURL} from '../../Services/apiClient';
 import {useDispatch} from 'react-redux';
 import {setUser} from '../../redux/auth';
-import LoginImage from '../../../assets/signup.jpeg';
+import LoginImage from '../../../assets/signup.png';
 import LogoIcon from '../../../assets/logo.png';
 
 const Signup = ({navigation}) => {
@@ -71,13 +71,10 @@ const Signup = ({navigation}) => {
         source={LoginImage}
         style={{
           width: width,
-          height: height - 550,
+          height: 150,
           objectFit: 'contain',
           borderRadius: 10,
-          marginBottom: 20,
-          position: 'absolute',
-          zIndex: -1000,
-          top: 0,
+          marginTop: 10,
         }}
       />
       <View
@@ -91,7 +88,6 @@ const Signup = ({navigation}) => {
             fontSize: 32,
             marginRight: 20,
             textAlign: 'center',
-            marginTop: height - 565,
           }}>
           Create your account
         </Text>

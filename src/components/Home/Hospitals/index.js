@@ -52,8 +52,8 @@ const Hospitals = () => {
       <MapView
         style={{height: height / 2}}
         region={{
-          latitude: latitude,
-          longitude: longitude,
+          latitude: '24.207500',
+          longitude: '55.744720',
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}

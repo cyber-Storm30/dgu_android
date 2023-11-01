@@ -15,6 +15,7 @@ import Discussion from './src/components/DoctorHome/Discussion';
 import TaskList from './src/components/DoctorHome/TaskList';
 import SingleTaskList from './src/components/DoctorHome/SingleTaskList';
 import {enableLatestRenderer} from 'react-native-maps';
+import Introduction from './src/components/Introduction';
 
 enableLatestRenderer();
 
@@ -36,6 +37,7 @@ const App = () => {
         }>
         <Stack.Screen name="Launch" component={Launch} />
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Introduction" component={Introduction} />
         <Stack.Screen name="DoctorLogin" component={DoctorLogin} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Onboarding" component={Onboarding} />
